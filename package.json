@@ -1,34 +1,10 @@
 {
-  "_from": "ep_subscript_and_superscript",
-  "_id": "ep_subscript_and_superscript@0.1.2",
-  "_inBundle": false,
-  "_integrity": "sha512-yv7pDh5h5DzVsuzXkHxTtxSPugyW41sEiURPpZ+w5JBude0d4wyOMQXWg6gXVPPb25QHSl6OWGAfUTBobPJNgA==",
-  "_location": "/ep_subscript_and_superscript",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "ep_subscript_and_superscript",
-    "name": "ep_subscript_and_superscript",
-    "escapedName": "ep_subscript_and_superscript",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/ep_subscript_and_superscript/-/ep_subscript_and_superscript-0.3.1.tgz",
-  "_shasum": "96170ea48f23d585aaf081afafc3a0d8d3930eab",
-  "_spec": "ep_subscript_and_superscript",
-  "_where": "/home/jose/develop",
   "author": {
     "name": "John McLear",
     "email": "john@mclear.co.uk"
   },
   "bugs": {
-    "url": "https://github.com/JohnMcLear/ep_subscript_and_superscript/issues"
+    "url": "https://github.com/ether/ep_subscript_and_superscript/issues"
   },
   "bundleDependencies": false,
   "dependencies": {},
@@ -37,12 +13,12 @@
   "engines": {
     "node": "*"
   },
-  "homepage": "https://github.com/JohnMcLear/ep_subscript_and_superscript#readme",
+  "homepage": "https://github.com/ether/ep_subscript_and_superscript#readme",
   "license": "Apache-2.0",
   "name": "ep_subscript_and_superscript",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JohnMcLear/ep_subscript_and_superscript.git"
+    "url": "git+https://github.com/ether/ep_subscript_and_superscript.git"
   },
-  "version": "0.1.2"
+  "version": "0.1.3"
 }

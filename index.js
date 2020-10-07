@@ -32,12 +32,12 @@ exports.aceAttribClasses = function(hook, attr){
 
 // Add the props to be supported in export
 exports.exportHtmlAdditionalTags = function(hook, pad, cb){
-  cb(["sub","sup"]);
+  return cb(["sub","sup"]);
 };
 
 
 exports.asyncLineHTMLForExport = function (hook, context, cb) {
-  cb(rewriteLine);
+  return cb(rewriteLine);
 }
 
 function rewriteLine(context){

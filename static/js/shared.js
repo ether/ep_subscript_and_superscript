@@ -1,4 +1,4 @@
-exports.collectContentPre = function(hook, context){
+exports.collectContentPre = (hookName, context, cb) => {
   var tname = context.tname;
   var state = context.state;
   var lineAttributes = state.lineAttributes
@@ -7,10 +7,11 @@ exports.collectContentPre = function(hook, context){
   // make it so formatting isn't lost on edit
   if(tname === "sub") context.cc.doAttrib(state, tname);
   if(tname === "sup") context.cc.doAttrib(state, tname);
+  return cb();
 };
 
 // never seems to be run
-exports.collectContentPost = function(hook, context){
+exports.collectContentPost = (hookName, context, cb) => {
 /*
   var tname = context.tname;
   var state = context.state;
@@ -21,4 +22,5 @@ exports.collectContentPost = function(hook, context){
     delete lineAttributes['sub'];
   }
 */
+  return cb();
 };

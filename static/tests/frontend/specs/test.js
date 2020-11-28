@@ -1,3 +1,5 @@
+'use strict';
+
 describe('Set Superscript and subscript and ensure its removed properly', function () {
   // create a new pad before each test run
   beforeEach(function (cb) {
@@ -11,9 +13,6 @@ describe('Set Superscript and subscript and ensure its removed properly', functi
     const inner$ = helper.padInner$;
 
     const $firstTextElement = inner$('div').first();
-    const $editorContainer = chrome$('#editorcontainer');
-
-    const $editorContents = inner$('div');
     $firstTextElement.sendkeys('First Line!');
     $firstTextElement.sendkeys('{selectall}');
 
@@ -33,9 +32,6 @@ describe('Set Superscript and subscript and ensure its removed properly', functi
     const inner$ = helper.padInner$;
 
     const $firstTextElement = inner$('div').first();
-    const $editorContainer = chrome$('#editorcontainer');
-
-    const $editorContents = inner$('div');
     $firstTextElement.sendkeys('First Line!');
     $firstTextElement.sendkeys('{selectall}');
 

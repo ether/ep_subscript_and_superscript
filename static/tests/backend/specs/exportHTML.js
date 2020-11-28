@@ -1,13 +1,33 @@
-const supertest = require('ep_etherpad-lite/node_modules/supertest');
-const fs = require('fs');
-const path = require('path');
-const request = require('ep_etherpad-lite/node_modules/request');
+'use strict';
+
 const utils = require('../utils.js');
-apiKey = utils.apiKey,
-codeToBe0 = utils.codeToBe0,
-api = utils.api,
-apiVersion = utils.apiVersion,
-randomString = require('ep_etherpad-lite/static/js/pad_utils').randomString;
+const apiKey = utils.apiKey;
+const api = utils.api;
+const apiVersion = utils.apiVersion;
+const randomString = require('ep_etherpad-lite/static/js/pad_utils').randomString;
+
+const buildHTML = (body) => `<html><body>${body}</body></html>`;
+const getHTMLEndPointFor =
+(padID, callback) => `/api/${apiVersion}/getHTML?apikey=${apiKey}&padID=${padID}`;
+
+// Creates a pad and returns the pad id. Calls the callback when finished.
+const createPad = (padID, callback) => {
+  api.get(`/api/${apiVersion}/createPad?apikey=${apiKey}&padID=${padID}`)
+      .end((err, res) => {
+        if (err || (res.body.code !== 0)) callback(new Error('Unable to create new Pad'));
+
+        callback(padID);
+      });
+};
+
+const setHTML = (padID, html, callback) => {
+  api.get(`/api/${apiVersion}/setHTML?apikey=${apiKey}&padID=${padID}&html=${html}`)
+      .end((err, res) => {
+        if (err || (res.body.code !== 0)) callback(new Error('Unable to set pad HTML'));
+
+        callback(null, padID);
+      });
+};
 
 describe('export Subscript to HTML', function () {
   let padID;
@@ -23,10 +43,8 @@ describe('export Subscript to HTML', function () {
   });
 
   context('when pad text has one Subscript', function () {
-    before(function () {
-      html = function () {
-        return buildHTML('<sub>Hello world</sub>');
-      };
+    before(async function () {
+      html = () => buildHTML('<sub>Hello world</sub>');
     });
 
     it('returns ok', function (done) {
@@ -39,18 +57,19 @@ describe('export Subscript to HTML', function () {
       api.get(getHTMLEndPointFor(padID))
           .expect((res) => {
             const html = res.body.data.html;
-            if (html.indexOf('<sub>Hello world</sub>') === -1) throw new Error('No sub tag detected');
+            if (html.indexOf('<sub>Hello world</sub>') === -1) {
+              throw new Error('No sub tag detected');
+            }
           })
           .end(done);
     });
   });
 
   context('when pad text has multiple Subscripts on multiple lines', function () {
-    before(function () {
-      html = function () {
-        return buildHTML('<sub>Hello world</sub><br/><sub>Foo</sub>');
-      };
+    before(async function () {
+      html = () => buildHTML('<sub>Hello world</sub><br/><sub>Foo</sub>');
     });
+
 
     it('returns ok', function (done) {
       api.get(getHTMLEndPointFor(padID))
@@ -62,7 +81,9 @@ describe('export Subscript to HTML', function () {
       api.get(getHTMLEndPointFor(padID))
           .expect((res) => {
             const html = res.body.data.html;
-            if (html.indexOf('<sub>Hello world</sub>') === -1) throw new Error('No sub tag detected');
+            if (html.indexOf('<sub>Hello world</sub>') === -1) {
+              throw new Error('No sub tag detected');
+            }
             if (html.indexOf('<sub>Foo</sub>') === -1) throw new Error('No sub tag detected');
           })
           .end(done);
@@ -84,11 +105,10 @@ describe('export Superscript to HTML', function () {
   });
 
   context('when pad text has one Superscript', function () {
-    before(function () {
-      html = function () {
-        return buildHTML('<sup>Hello world</sup>');
-      };
+    before(async function () {
+      html = () => buildHTML('<sup>Hello world</sup>');
     });
+
 
     it('returns ok', function (done) {
       api.get(getHTMLEndPointFor(padID))
@@ -100,17 +120,17 @@ describe('export Superscript to HTML', function () {
       api.get(getHTMLEndPointFor(padID))
           .expect((res) => {
             const html = res.body.data.html;
-            if (html.indexOf('<sup>Hello world</sup>') === -1) throw new Error('No sup tag detected');
+            if (html.indexOf('<sup>Hello world</sup>') === -1) {
+              throw new Error('No sup tag detected');
+            }
           })
           .end(done);
     });
   });
 
   context('when pad text has multiple Superscripts on multiple lines', function () {
-    before(function () {
-      html = function () {
-        return buildHTML('<sup>Hello world</sup><br/><sup>Foo</sup>');
-      };
+    before(async function () {
+      html = () => buildHTML('<sup>Hello world</sup><br/><sup>Foo</sup>');
     });
 
     it('returns ok', function (done) {
@@ -123,39 +143,14 @@ describe('export Superscript to HTML', function () {
       api.get(getHTMLEndPointFor(padID))
           .expect((res) => {
             const html = res.body.data.html;
-            if (html.indexOf('<sup>Hello world</sup>') === -1) throw new Error('No sup tag detected');
-            if (html.indexOf('<sup>Foo</sup>') === -1) throw new Error('No sup tag detected');
+            if (html.indexOf('<sup>Hello world</sup>') === -1) {
+              throw new Error('No sup tag detected');
+            }
+            if (html.indexOf('<sup>Foo</sup>') === -1) {
+              throw new Error('No sup tag detected');
+            }
           })
           .end(done);
     });
   });
 });
-
-
-// Creates a pad and returns the pad id. Calls the callback when finished.
-var createPad = function (padID, callback) {
-  api.get(`/api/${apiVersion}/createPad?apikey=${apiKey}&padID=${padID}`)
-      .end((err, res) => {
-        if (err || (res.body.code !== 0)) callback(new Error('Unable to create new Pad'));
-
-        callback(padID);
-      });
-};
-
-var setHTML = function (padID, html, callback) {
-  api.get(`/api/${apiVersion}/setHTML?apikey=${apiKey}&padID=${padID}&html=${html}`)
-      .end((err, res) => {
-        if (err || (res.body.code !== 0)) callback(new Error('Unable to set pad HTML'));
-
-        callback(null, padID);
-      });
-};
-
-var getHTMLEndPointFor = function (padID, callback) {
-  return `/api/${apiVersion}/getHTML?apikey=${apiKey}&padID=${padID}`;
-};
-
-
-var buildHTML = function (body) {
-  return `<html><body>${body}</body></html>`;
-};

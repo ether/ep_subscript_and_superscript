@@ -20,7 +20,7 @@
     "type": "git",
     "url": "git+https://github.com/ether/ep_subscript_and_superscript.git"
   },
-  "version": "0.2.17",
+  "version": "0.2.18",
   "funding": {
     "type": "individual",
     "url": "http://etherpad.org/"

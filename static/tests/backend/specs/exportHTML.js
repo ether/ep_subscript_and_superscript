@@ -1,18 +1,19 @@
 'use strict';
 
-const utils = require('../utils.js');
-const apiKey = utils.apiKey;
-const api = utils.api;
-const apiVersion = utils.apiVersion;
+const common = require('ep_etherpad-lite/tests/backend/common');
 const randomString = require('ep_etherpad-lite/static/js/pad_utils').randomString;
+
+let agent;
+const apiKey = common.apiKey;
+const apiVersion = 1;
 
 const buildHTML = (body) => `<html><body>${body}</body></html>`;
 const getHTMLEndPointFor =
-(padID, callback) => `/api/${apiVersion}/getHTML?apikey=${apiKey}&padID=${padID}`;
+    (padID, callback) => `/api/${apiVersion}/getHTML?apikey=${apiKey}&padID=${padID}`;
 
 // Creates a pad and returns the pad id. Calls the callback when finished.
 const createPad = (padID, callback) => {
-  api.get(`/api/${apiVersion}/createPad?apikey=${apiKey}&padID=${padID}`)
+  agent.get(`/api/${apiVersion}/createPad?apikey=${apiKey}&padID=${padID}`)
       .end((err, res) => {
         if (err || (res.body.code !== 0)) callback(new Error('Unable to create new Pad'));
 
@@ -21,7 +22,7 @@ const createPad = (padID, callback) => {
 };
 
 const setHTML = (padID, html, callback) => {
-  api.get(`/api/${apiVersion}/setHTML?apikey=${apiKey}&padID=${padID}&html=${html}`)
+  agent.get(`/api/${apiVersion}/setHTML?apikey=${apiKey}&padID=${padID}&html=${html}`)
       .end((err, res) => {
         if (err || (res.body.code !== 0)) callback(new Error('Unable to set pad HTML'));
 
@@ -32,6 +33,8 @@ const setHTML = (padID, html, callback) => {
 describe('export Subscript to HTML', function () {
   let padID;
   let html;
+
+  before(async function () { agent = await common.init(); });
 
   // create a new pad before each test run
   beforeEach(function (done) {
@@ -48,13 +51,13 @@ describe('export Subscript to HTML', function () {
     });
 
     it('returns ok', function (done) {
-      api.get(getHTMLEndPointFor(padID))
+      agent.get(getHTMLEndPointFor(padID))
           .expect('Content-Type', /json/)
           .expect(200, done);
     });
 
     it('returns HTML with Subscript HTML tags', function (done) {
-      api.get(getHTMLEndPointFor(padID))
+      agent.get(getHTMLEndPointFor(padID))
           .expect((res) => {
             const html = res.body.data.html;
             if (html.indexOf('<sub>Hello world</sub>') === -1) {
@@ -72,13 +75,13 @@ describe('export Subscript to HTML', function () {
 
 
     it('returns ok', function (done) {
-      api.get(getHTMLEndPointFor(padID))
+      agent.get(getHTMLEndPointFor(padID))
           .expect('Content-Type', /json/)
           .expect(200, done);
     });
 
     it('returns HTML with Multiple Subscripts HTML tags', function (done) {
-      api.get(getHTMLEndPointFor(padID))
+      agent.get(getHTMLEndPointFor(padID))
           .expect((res) => {
             const html = res.body.data.html;
             if (html.indexOf('<sub>Hello world</sub>') === -1) {
@@ -111,13 +114,13 @@ describe('export Superscript to HTML', function () {
 
 
     it('returns ok', function (done) {
-      api.get(getHTMLEndPointFor(padID))
+      agent.get(getHTMLEndPointFor(padID))
           .expect('Content-Type', /json/)
           .expect(200, done);
     });
 
     it('returns HTML with Suberscript HTML tags', function (done) {
-      api.get(getHTMLEndPointFor(padID))
+      agent.get(getHTMLEndPointFor(padID))
           .expect((res) => {
             const html = res.body.data.html;
             if (html.indexOf('<sup>Hello world</sup>') === -1) {
@@ -134,13 +137,13 @@ describe('export Superscript to HTML', function () {
     });
 
     it('returns ok', function (done) {
-      api.get(getHTMLEndPointFor(padID))
+      agent.get(getHTMLEndPointFor(padID))
           .expect('Content-Type', /json/)
           .expect(200, done);
     });
 
     it('returns HTML with Multiple Superscripts HTML tags', function (done) {
-      api.get(getHTMLEndPointFor(padID))
+      agent.get(getHTMLEndPointFor(padID))
           .expect((res) => {
             const html = res.body.data.html;
             if (html.indexOf('<sup>Hello world</sup>') === -1) {

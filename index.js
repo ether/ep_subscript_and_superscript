@@ -36,3 +36,24 @@ const rewriteLine = (context) => context.lineContent;
 // Add the props to be supported in export
 exports.exportHtmlAdditionalTags = (hook, pad, cb) => cb(['sub', 'sup']);
 exports.asyncLineHTMLForExport = (hook, context, cb) => cb(rewriteLine);
+
+exports.padInitToolbar = (hookName, args, cb) => {
+  const toolbar = args.toolbar;
+
+  const superscriptButton = toolbar.button({
+    command: 'sup',
+    localizationId: 'ep_subscript_and_superscript.superscript',
+    class: 'buttonicon buttonicon-superscript',
+  });
+
+  const subscriptButton = toolbar.button({
+    command: 'sub',
+    localizationId: 'ep_subscript_and_superscript.subscript',
+    class: 'buttonicon buttonicon-subscript',
+  });
+
+  toolbar.registerButton('sup', superscriptButton);
+  toolbar.registerButton('sub', subscriptButton);
+
+  return cb();
+};

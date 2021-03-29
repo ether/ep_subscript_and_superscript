@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Tamaki Wakita"
+		]
+	},
+	"ep_subscript_and_superscript.subscript": "下付き",
+	"ep_subscript_and_superscript.superscript": "上付き"
+}

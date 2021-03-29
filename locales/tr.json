@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"MuratTheTurkish"
+			"MuratTheTurkish",
+			"SaldırganSincap"
 		]
 	},
-	"ep_subscript_and_superscript.subscript": "alt simge",
-	"ep_subscript_and_superscript.superscript": "üst simge"
+	"ep_subscript_and_superscript.subscript": "Alt simge",
+	"ep_subscript_and_superscript.superscript": "Üst simge"
 }

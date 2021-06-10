@@ -1,7 +1,9 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"WikiPhoenix"
+		]
 	},
-	"ep_subscript_and_superscript.subscript": "indexläge",
-	"ep_subscript_and_superscript.superscript": "exponentläge"
+	"ep_subscript_and_superscript.subscript": "Nedsänkt",
+	"ep_subscript_and_superscript.superscript": "Upphöjd"
 }

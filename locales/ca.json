@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mguix"
+			"Mguix",
+			"Vfc"
 		]
 	},
-	"ep_subscript_and_superscript.subscript": "subíndex",
-	"ep_subscript_and_superscript.superscript": "superíndex"
+	"ep_subscript_and_superscript.subscript": "Subíndex",
+	"ep_subscript_and_superscript.superscript": "Superíndex"
 }

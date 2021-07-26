@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Okras"
+		]
+	},
+	"ep_subscript_and_superscript.subscript": "Подстрочный индекс",
+	"ep_subscript_and_superscript.superscript": "Надстрочный индекс"
+}

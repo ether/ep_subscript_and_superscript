@@ -22,22 +22,22 @@ exports.postAceInit = (hook, context) => {
   });
 };
 
-exports.aceEditEvent = (hook, call, info, rep, attr) => {
+exports.aceEditEvent = (hookName, {callstack, editorInfo}) => {
   // If it's not a click or a key event and the text hasn't changed then do nothing
-  if (!(call.callstack.type === 'handleClick') &&
-  !(call.callstack.type === 'handleKeyEvent') &&
-  !(call.callstack.docTextChanged)) {
+  if (!(callstack.type === 'handleClick') &&
+      !(callstack.type === 'handleKeyEvent') &&
+      !(callstack.docTextChanged)) {
     return false;
   }
   setTimeout(() => { // avoid race condition..
     // the caret is in a new position..  Let's do some funky shit
-    if (call.editorInfo.ace_getAttributeOnSelection('sub')) {
+    if (editorInfo.ace_getAttributeOnSelection('sub')) {
       // show the button as being depressed..  Not sad, but active.. You know the drill bitches.
       $('.subscript > a').addClass('activeButton');
     } else {
       $('.subscript > a').removeClass('activeButton');
     }
-    if (call.editorInfo.ace_getAttributeOnSelection('sup')) {
+    if (editorInfo.ace_getAttributeOnSelection('sup')) {
       // show the button as being depressed..  Not sad, but active.. You know the drill bitches.
       $('.superscript > a').addClass('activeButton');
     } else {

@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"1917 Ekim Devrimi"
+			"1917 Ekim Devrimi",
+			"Mirzali"
 		]
 	},
-	"ep_subscript_and_superscript.subscript": "skripto bınên",
-	"ep_subscript_and_superscript.superscript": "Skripto serên"
+	"ep_subscript_and_superscript.subscript": "Bınnuşte",
+	"ep_subscript_and_superscript.superscript": "Sernuşte"
 }

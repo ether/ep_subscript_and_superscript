@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Andibecker"
+			"Andibecker",
+			"Trisorn Triboon"
 		]
 	},
-	"ep_subscript_and_superscript.subscript": "สมัครสมาชิก",
+	"ep_subscript_and_superscript.subscript": "ตัวห้อย",
 	"ep_subscript_and_superscript.superscript": "ตัวยก"
 }

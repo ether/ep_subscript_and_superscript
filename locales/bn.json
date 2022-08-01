@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"R4356th"
+			"R4356th",
+			"আজিজ"
 		]
 	},
-	"ep_subscript_and_superscript.subscript": "নিম্নলিপি"
+	"ep_subscript_and_superscript.subscript": "নিম্নলিপি",
+	"ep_subscript_and_superscript.superscript": "ঊর্ধ্বলিপি"
 }

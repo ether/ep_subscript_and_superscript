@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Spinster"
+		]
+	},
+	"ep_subscript_and_superscript.subscript": "Subscript",
+	"ep_subscript_and_superscript.superscript": "Superscript"
+}

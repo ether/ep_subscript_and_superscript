@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"YaronSh"
 		]
 	},
 	"ep_subscript_and_superscript.subscript": "כתב תחתי",
-	"ep_subscript_and_superscript.superscript": "כתב עלי"
+	"ep_subscript_and_superscript.superscript": "כתב עילי"
 }

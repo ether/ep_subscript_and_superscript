@@ -5,9 +5,7 @@ name: Node.js Package
 
 on:
   workflow_run:
-    workflows:
-      - "Frontend Tests"
-      - "Backend Tests"
+    workflows: [Frontend Tests, Backend Tests]
     types:
       - completed
     branches:
@@ -15,9 +13,8 @@ on:
       - master
 
 jobs:
-
   publish-npm:
-    if: github.event_name == 'push'
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - name: Check out Etherpad core

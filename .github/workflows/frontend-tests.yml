@@ -1,6 +1,6 @@
 # Publicly credit Sauce Labs because they generously support open source
 # projects.
-name: "Frontend Tests"
+name: Frontend Tests
 
 on: [push]
 

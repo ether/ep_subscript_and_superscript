@@ -20,6 +20,26 @@ jobs:
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
+      - name: Check out Etherpad core
+        uses: actions/checkout@v3
+        with:
+          repository: ether/etherpad-lite
+      - uses: pnpm/action-setup@v3
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: false
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+      - uses: actions/cache@v4
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
       -
         uses: actions/checkout@v3
         with:
@@ -50,11 +70,11 @@ jobs:
       # back-to-back merges will cause the first merge's workflow to fail but
       # the second's will succeed.
       -
-        run: npm publish
+        run: pnpm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
       -
         name: Add package to etherpad organization
-        run: npm access grant read-write etherpad:developers
+        run: pnpm access grant read-write etherpad:developers
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

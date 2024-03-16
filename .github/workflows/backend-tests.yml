@@ -58,10 +58,7 @@ jobs:
                 pnpm link --global
               env:
                 PLUGIN_NAME: ${{ steps.plugin_name.outputs.plugin_name }}
-            - name: Link plugin to etherpad-lite
-              working-directory: ./etherpad-lite
-              run: |
-                pnpm link --global $PLUGIN_NAME
+
             - name: Remove tests
               working-directory: ./etherpad-lite
               run: rm -rf ./src/tests
@@ -69,6 +66,10 @@ jobs:
               name: Install Etherpad core dependencies
               working-directory: ./etherpad-lite
               run: bin/installDeps.sh
+            - name: Link plugin to etherpad-lite
+              working-directory: ./etherpad-lite
+              run: |
+                pnpm link --global $PLUGIN_NAME
             - name: List test files
               working-directory: ./etherpad-lite/src
               run: ls ../node_modules/

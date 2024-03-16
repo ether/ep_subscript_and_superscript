@@ -2,7 +2,8 @@
 # projects.
 name: Frontend Tests
 
-on: [push]
+on:
+  workflow_call:
 
 jobs:
   test-frontend:

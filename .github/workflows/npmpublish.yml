@@ -4,13 +4,7 @@
 name: Node.js Package
 
 on:
-  workflow_run:
-    workflows: ["Backend Tests", "Frontend Tests"]
-    types:
-      - completed
-    branches:
-      - main
-      - master
+  workflow_call:
 
 jobs:
   publish-npm:

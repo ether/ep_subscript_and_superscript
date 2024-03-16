@@ -1,7 +1,8 @@
 name: Backend Tests
 
 # any branch is useful for testing before a PR is submitted
-on: [push, pull_request]
+on:
+  workflow_call:
 
 jobs:
   withplugins:

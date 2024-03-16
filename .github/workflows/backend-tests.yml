@@ -72,6 +72,7 @@ jobs:
               working-directory: ./etherpad-lite
               run: |
                 pnpm link --global ep_subscript_and_superscript
+                pnpm run install-plugins --path=../plugin
             - name: Link ep_etherpad-lite
               working-directory: ./etherpad-lite/src
               run: |

@@ -71,6 +71,14 @@ jobs:
               working-directory: ./etherpad-lite
               run: |
                 pnpm link --global ep_subscript_and_superscript
+            - name: Link ep_etherpad-lite
+              working-directory: ./etherpad-lite/src
+              run: |
+                    pnpm link --global
+            - name: Link etherpad to plugin
+              working-directory: ./plugin
+              run: |
+                  pnpm link --global ep_etherpad-lite
             - name: List test files
               working-directory: ./etherpad-lite/src
               run: ls ../node_modules/

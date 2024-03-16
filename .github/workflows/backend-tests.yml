@@ -52,15 +52,12 @@ jobs:
               id: plugin_name
               working-directory: ./plugin
               run: |
-                echo "::set-output name=plugin_name::$(node -p "require('./package.json').name")"
+                npx -c 'printf %s\\n "::set-output name=plugin_name::${npm_package_name}"'
             -
               name: Link plugin directory
               working-directory: ./plugin
               run: |
                 pnpm link --global
-              env:
-                PLUGIN_NAME: ${{ steps.plugin_name.outputs.plugin_name }}
-
             - name: Remove tests
               working-directory: ./etherpad-lite
               run: rm -rf ./src/tests/backend/specs
@@ -71,8 +68,10 @@ jobs:
             - name: Link plugin to etherpad-lite
               working-directory: ./etherpad-lite
               run: |
-                pnpm link --global ep_subscript_and_superscript
+                pnpm link --global $PLUGIN_NAME
                 pnpm run install-plugins --path  ../../plugin
+              env:
+                PLUGIN_NAME: ${{ steps.plugin_name.outputs.plugin_name }}
             - name: Link ep_etherpad-lite
               working-directory: ./etherpad-lite/src
               run: |

@@ -4,8 +4,12 @@
 name: Node.js Package
 
 on:
-  pull_request:
-  push:
+  workflow_run:
+    workflows:
+      - "Frontend Tests"
+      - "Backend Tests"
+    types:
+      - completed
     branches:
       - main
       - master

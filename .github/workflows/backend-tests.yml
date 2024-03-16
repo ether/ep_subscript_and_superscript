@@ -24,23 +24,7 @@ jobs:
               uses: actions/checkout@v3
               with:
                 repository: ether/etherpad-lite
-            -
-              name: Checkout plugin repository
-              uses: actions/checkout@v3
-              with:
-                path: ./node_modules/__tmp
-            -
-              name: Determine plugin name
-              id: plugin_name
-              run: |
-                cd ./node_modules/__tmp
-                npx -c 'printf %s\\n "::set-output name=plugin_name::${npm_package_name}"'
-            -
-              name: Rename plugin directory
-              run: |
-                mv ./node_modules/__tmp ./node_modules/"${PLUGIN_NAME}"
-              env:
-                PLUGIN_NAME: ${{ steps.plugin_name.outputs.plugin_name }}
+                path: etherpad-lite
             - uses: pnpm/action-setup@v3
               name: Install pnpm
               with:
@@ -57,6 +41,30 @@ jobs:
                 key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
                 restore-keys: |
                   ${{ runner.os }}-pnpm-store-
+            -
+              name: Checkout plugin repository
+              uses: actions/checkout@v3
+              with:
+                path: plugin
+            -
+              name: Determine plugin name
+              id: plugin_name
+              run: |
+                cd ./plugin
+                echo "::set-output name=plugin_name::$(node -p "require('./package.json').name")"
+            -
+              name: Rename plugin directory
+              run: |
+                pnpm link --global
+              env:
+                PLUGIN_NAME: ${{ steps.plugin_name.outputs.plugin_name }}
+            - name: Link plugin to etherpad-lite
+              working-directory: ./etherpad-lite
+              run: |
+                pnpm link --global $PLUGIN_NAME
+            - name: Remove tests
+              working-directory: ./etherpad-lite
+              run: rm -rf ./src/tests
             -
               name: Install Etherpad core dependencies
               run: bin/installDeps.sh

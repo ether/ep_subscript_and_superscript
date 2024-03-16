@@ -4,15 +4,15 @@ on: [push]
 
 jobs:
   backend:
-    uses: ./github/workflows/backend-tests.yml
+    uses: ./.github/workflows/backend-tests.yml
     secrets: inherit
   frontend:
-    uses: ./github/workflows/frontend-tests.yml
+    uses: ./.github/workflows/frontend-tests.yml
     secrets: inherit
   release:
     if: github.ref == 'refs/heads/main'|| github.ref == 'refs/heads/master'
     needs:
         - backend
         - frontend
-    uses: ./github/workflows/npmpublish.yml
+    uses: ./.github/workflows/npmpublish.yml
     secrets: inherit

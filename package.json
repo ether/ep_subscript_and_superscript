@@ -11,7 +11,7 @@
   "deprecated": false,
   "description": "Add support for different Fonts",
   "engines": {
-    "node": ">=12.17.0"
+    "node": ">=18.0.0"
   },
   "homepage": "https://github.com/ether/ep_subscript_and_superscript#readme",
   "license": "Apache-2.0",
@@ -20,14 +20,15 @@
     "type": "git",
     "url": "git+https://github.com/ether/ep_subscript_and_superscript.git"
   },
-  "version": "0.3.2",
+  "version": "0.3.3",
   "funding": {
     "type": "individual",
     "url": "https://etherpad.org/"
   },
   "devDependencies": {
     "eslint": "^8.57.0",
-    "eslint-config-etherpad": "^3.0.22"
+    "eslint-config-etherpad": "^4.0.4",
+    "typescript": "^5.4.2"
   },
   "scripts": {
     "lint": "eslint .",

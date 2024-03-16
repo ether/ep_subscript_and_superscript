@@ -62,7 +62,7 @@ jobs:
 
             - name: Remove tests
               working-directory: ./etherpad-lite
-              run: rm -rf ./src/tests
+              run: rm -rf ./src/tests/backend/specs
             -
               name: Install Etherpad core dependencies
               working-directory: ./etherpad-lite

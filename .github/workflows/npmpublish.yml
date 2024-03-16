@@ -14,7 +14,9 @@ jobs:
 
   publish-npm:
     if: github.event_name == 'push'
-    needs: [withplugins, test-frontend]
+    needs:
+    - withplugins
+    - test-frontend
     runs-on: ubuntu-latest
     steps:
       -

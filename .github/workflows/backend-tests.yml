@@ -49,11 +49,13 @@ jobs:
             -
               name: Determine plugin name
               id: plugin_name
+              working-directory: ./plugin
               run: |
                 cd ./plugin
                 echo "::set-output name=plugin_name::$(node -p "require('./package.json').name")"
             -
-              name: Rename plugin directory
+              name: Link plugin directory
+              working-directory: ./plugin
               run: |
                 pnpm link --global
               env:
@@ -69,7 +71,7 @@ jobs:
             - name: Link plugin to etherpad-lite
               working-directory: ./etherpad-lite
               run: |
-                pnpm link --global $PLUGIN_NAME
+                pnpm link --global ep_subscript_and_superscript
             - name: List test files
               working-directory: ./etherpad-lite/src
               run: ls ../node_modules/

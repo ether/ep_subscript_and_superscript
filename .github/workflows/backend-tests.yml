@@ -80,7 +80,7 @@ jobs:
               run: |
                   pnpm link --global ep_etherpad-lite
             - name: List test files
-              working-directory: ./etherpad-lite/src
+              working-directory: ./etherpad-lite
               run: pnpm ls
             -
               name: Run the backend tests

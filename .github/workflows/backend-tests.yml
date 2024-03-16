@@ -71,7 +71,7 @@ jobs:
               run: bin/installDeps.sh
             - name: List test files
               working-directory: ./etherpad-lite/src
-              run: ls ../node_modules/ep_*/static/tests/backend/specs/**
+              run: ls ../node_modules/
             -
               name: Run the backend tests
               working-directory: ./etherpad-lite

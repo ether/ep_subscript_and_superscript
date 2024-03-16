@@ -51,7 +51,6 @@ jobs:
               id: plugin_name
               working-directory: ./plugin
               run: |
-                cd ./plugin
                 echo "::set-output name=plugin_name::$(node -p "require('./package.json').name")"
             -
               name: Link plugin directory

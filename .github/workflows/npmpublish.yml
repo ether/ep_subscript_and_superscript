@@ -5,7 +5,7 @@ name: Node.js Package
 
 on:
   workflow_run:
-    workflows: [Frontend Tests, Backend tests]
+    workflows: ["Backend Tests", "Frontend Tests"]
     types:
       - completed
     branches:

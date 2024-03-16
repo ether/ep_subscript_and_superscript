@@ -71,4 +71,5 @@ jobs:
               run: bin/installDeps.sh
             -
               name: Run the backend tests
+              working-directory: ./etherpad-lite
               run: pnpm run test

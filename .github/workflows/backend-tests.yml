@@ -67,6 +67,7 @@ jobs:
               run: rm -rf ./src/tests
             -
               name: Install Etherpad core dependencies
+              working-directory: ./etherpad-lite
               run: bin/installDeps.sh
             -
               name: Run the backend tests

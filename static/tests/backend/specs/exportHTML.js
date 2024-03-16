@@ -1,7 +1,7 @@
 'use strict';
 
-const common = require('etherpad/ep_etherpad-lite/tests/backend/common');
-const randomString = require('etherpad/ep_etherpad-lite/static/js/pad_utils').randomString;
+const common = require('ep_etherpad-lite/tests/backend/common');
+const randomString = require('ep_etherpad-lite/static/js/pad_utils').randomString;
 
 let agent;
 const apiKey = common.apiKey;

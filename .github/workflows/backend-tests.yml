@@ -25,7 +25,6 @@ jobs:
               with:
                 repository: ether/etherpad-lite
                 path: etherpad-lite
-                ref: feat/local-install
             - uses: pnpm/action-setup@v3
               name: Install pnpm
               with:

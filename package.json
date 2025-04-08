@@ -6,7 +6,6 @@
   "bugs": {
     "url": "https://github.com/ether/ep_subscript_and_superscript/issues"
   },
-  "bundleDependencies": [],
   "deprecated": false,
   "description": "Add support for different Fonts",
   "engines": {

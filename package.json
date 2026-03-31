@@ -18,18 +18,18 @@
     "type": "git",
     "url": "git+https://github.com/ether/ep_subscript_and_superscript.git"
   },
-  "version": "0.3.22",
+  "version": "0.3.23",
   "funding": {
     "type": "individual",
     "url": "https://etherpad.org/"
   },
   "devDependencies": {
-    "@types/mocha": "^10.0.6",
-    "@types/node": "^20.11.30",
-    "eslint": "^8.57.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^20.19.37",
+    "eslint": "^8.57.1",
     "eslint-config-etherpad": "^4.0.4",
-    "mocha": "^10.4.0",
-    "typescript": "^5.4.2"
+    "mocha": "^10.8.2",
+    "typescript": "^5.9.3"
   },
   "scripts": {
     "lint": "eslint .",

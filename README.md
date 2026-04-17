@@ -1,4 +1,4 @@
-# ep_subscript_and_superscript
+# Subscript and Superscript for Etherpad
 
 ![Demo](demo.gif)
 

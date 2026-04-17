@@ -1,5 +1,7 @@
 # ep_subscript_and_superscript
 
+![Demo](demo.gif)
+
 Adds subscript and superscript text formatting buttons to the Etherpad toolbar, with HTML export support.
 
 ## Install

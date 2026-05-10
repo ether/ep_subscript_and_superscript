@@ -1,19 +1,17 @@
 'use strict';
 
+const {template} = require('ep_plugin_helpers');
+
 const eejs = require('ep_etherpad-lite/node/eejs/');
 
 /** ******************
 * UI
 */
-exports.eejsBlock_editbarMenuLeft = (hookName, args, cb) => {
-  args.content += eejs.require('ep_subscript_and_superscript/templates/editbarButtons.ejs');
-  return cb();
-};
+exports.eejsBlock_editbarMenuLeft =
+    template('ep_subscript_and_superscript/templates/editbarButtons.ejs');
 
-exports.eejsBlock_dd_format = (hookName, args, cb) => {
-  args.content += eejs.require('ep_subscript_and_superscript/templates/fileMenu.ejs');
-  return cb();
-};
+exports.eejsBlock_dd_format =
+    template('ep_subscript_and_superscript/templates/fileMenu.ejs');
 
 
 /** ******************

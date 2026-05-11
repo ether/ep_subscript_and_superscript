@@ -4,6 +4,6 @@
 			"Jimkats"
 		]
 	},
-	"ep_subscript_and_superscript.subscript": "Δείκτης",
-	"ep_subscript_and_superscript.superscript": "Εκθέτης"
+	"ep_subscript_and_superscript.subscript.title": "Δείκτης",
+	"ep_subscript_and_superscript.superscript.title": "Εκθέτης"
 }

@@ -40,13 +40,13 @@ exports.padInitToolbar = (hookName, args, cb) => {
 
   const superscriptButton = toolbar.button({
     command: 'sup',
-    localizationId: 'ep_subscript_and_superscript.superscript',
+    localizationId: 'ep_subscript_and_superscript.superscript.title',
     class: 'buttonicon buttonicon-superscript',
   });
 
   const subscriptButton = toolbar.button({
     command: 'sub',
-    localizationId: 'ep_subscript_and_superscript.subscript',
+    localizationId: 'ep_subscript_and_superscript.subscript.title',
     class: 'buttonicon buttonicon-subscript',
   });
 

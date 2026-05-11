@@ -4,6 +4,6 @@
 			"列维劳德"
 		]
 	},
-	"ep_subscript_and_superscript.subscript": "下标",
-	"ep_subscript_and_superscript.superscript": "上标"
+	"ep_subscript_and_superscript.subscript.title": "下标",
+	"ep_subscript_and_superscript.superscript.title": "上标"
 }

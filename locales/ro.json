@@ -4,6 +4,6 @@
 			"SZ475"
 		]
 	},
-	"ep_subscript_and_superscript.subscript": "Indice",
-	"ep_subscript_and_superscript.superscript": "Exponent"
+	"ep_subscript_and_superscript.subscript.title": "Indice",
+	"ep_subscript_and_superscript.superscript.title": "Exponent"
 }

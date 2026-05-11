@@ -4,6 +4,6 @@
 			"Verdy p"
 		]
 	},
-	"ep_subscript_and_superscript.subscript": "Indice",
-	"ep_subscript_and_superscript.superscript": "Exposant"
+	"ep_subscript_and_superscript.subscript.title": "Indice",
+	"ep_subscript_and_superscript.superscript.title": "Exposant"
 }

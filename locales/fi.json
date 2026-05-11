@@ -4,6 +4,6 @@
 			"Yupik"
 		]
 	},
-	"ep_subscript_and_superscript.subscript": "Alaindeksi",
-	"ep_subscript_and_superscript.superscript": "Yläindeksi"
+	"ep_subscript_and_superscript.subscript.title": "Alaindeksi",
+	"ep_subscript_and_superscript.superscript.title": "Yläindeksi"
 }

@@ -4,6 +4,6 @@
 			"Usagi.02808"
 		]
 	},
-	"ep_subscript_and_superscript.subscript": "Indeks dolny",
-	"ep_subscript_and_superscript.superscript": "Indeks górny"
+	"ep_subscript_and_superscript.subscript.title": "Indeks dolny",
+	"ep_subscript_and_superscript.superscript.title": "Indeks górny"
 }

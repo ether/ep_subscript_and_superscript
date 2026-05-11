@@ -4,6 +4,6 @@
 			"Mariagarbin"
 		]
 	},
-	"ep_subscript_and_superscript.subscript": "Subscrito",
-	"ep_subscript_and_superscript.superscript": "Sobrescrito"
+	"ep_subscript_and_superscript.subscript.title": "Subscrito",
+	"ep_subscript_and_superscript.superscript.title": "Sobrescrito"
 }

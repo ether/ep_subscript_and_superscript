@@ -4,6 +4,6 @@
 			"Tamaki Wakita"
 		]
 	},
-	"ep_subscript_and_superscript.subscript": "下付き",
-	"ep_subscript_and_superscript.superscript": "上付き"
+	"ep_subscript_and_superscript.subscript.title": "下付き",
+	"ep_subscript_and_superscript.superscript.title": "上付き"
 }

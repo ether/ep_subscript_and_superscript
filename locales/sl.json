@@ -4,6 +4,6 @@
 			"Eleassar"
 		]
 	},
-	"ep_subscript_and_superscript.subscript": "Podpisano",
-	"ep_subscript_and_superscript.superscript": "Nadpisano"
+	"ep_subscript_and_superscript.subscript.title": "Podpisano",
+	"ep_subscript_and_superscript.superscript.title": "Nadpisano"
 }

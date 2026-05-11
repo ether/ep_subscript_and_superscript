@@ -4,6 +4,6 @@
 			"Spotter"
 		]
 	},
-	"ep_subscript_and_superscript.subscript": "Dolní index",
-	"ep_subscript_and_superscript.superscript": "Horní index"
+	"ep_subscript_and_superscript.subscript.title": "Dolní index",
+	"ep_subscript_and_superscript.superscript.title": "Horní index"
 }

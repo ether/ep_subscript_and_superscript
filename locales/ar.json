@@ -4,6 +4,6 @@
 			"Meno25"
 		]
 	},
-	"ep_subscript_and_superscript.subscript": "نص سفلي",
-	"ep_subscript_and_superscript.superscript": "نص علوي"
+	"ep_subscript_and_superscript.subscript.title": "نص سفلي",
+	"ep_subscript_and_superscript.superscript.title": "نص علوي"
 }

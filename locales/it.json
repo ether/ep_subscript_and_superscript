@@ -4,6 +4,6 @@
 			"Beta16"
 		]
 	},
-	"ep_subscript_and_superscript.subscript": "Pedice",
-	"ep_subscript_and_superscript.superscript": "Apice"
+	"ep_subscript_and_superscript.subscript.title": "Pedice",
+	"ep_subscript_and_superscript.superscript.title": "Apice"
 }

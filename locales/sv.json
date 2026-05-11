@@ -4,6 +4,6 @@
 			"WikiPhoenix"
 		]
 	},
-	"ep_subscript_and_superscript.subscript": "Nedsänkt",
-	"ep_subscript_and_superscript.superscript": "Upphöjd"
+	"ep_subscript_and_superscript.subscript.title": "Nedsänkt",
+	"ep_subscript_and_superscript.superscript.title": "Upphöjd"
 }

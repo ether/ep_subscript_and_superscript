@@ -4,6 +4,6 @@
 			"Ovruni"
 		]
 	},
-	"ep_subscript_and_superscript.subscript": "Subíndice",
-	"ep_subscript_and_superscript.superscript": "Superíndice"
+	"ep_subscript_and_superscript.subscript.title": "Subíndice",
+	"ep_subscript_and_superscript.superscript.title": "Superíndice"
 }

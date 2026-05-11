@@ -5,6 +5,6 @@
 			"Vfc"
 		]
 	},
-	"ep_subscript_and_superscript.subscript": "Subíndex",
-	"ep_subscript_and_superscript.superscript": "Superíndex"
+	"ep_subscript_and_superscript.subscript.title": "Subíndex",
+	"ep_subscript_and_superscript.superscript.title": "Superíndex"
 }

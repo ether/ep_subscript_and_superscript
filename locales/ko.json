@@ -4,6 +4,6 @@
 			"Ykhwong"
 		]
 	},
-	"ep_subscript_and_superscript.subscript": "아래 첨자",
-	"ep_subscript_and_superscript.superscript": "위 첨자"
+	"ep_subscript_and_superscript.subscript.title": "아래 첨자",
+	"ep_subscript_and_superscript.superscript.title": "위 첨자"
 }

@@ -4,6 +4,6 @@
 			"FF-11"
 		]
 	},
-	"ep_subscript_and_superscript.subscript": "Tiefgestellt",
-	"ep_subscript_and_superscript.superscript": "Hochgestellt"
+	"ep_subscript_and_superscript.subscript.title": "Tiefgestellt",
+	"ep_subscript_and_superscript.superscript.title": "Hochgestellt"
 }

@@ -4,6 +4,6 @@
 			"Spinster"
 		]
 	},
-	"ep_subscript_and_superscript.subscript": "Subscript",
-	"ep_subscript_and_superscript.superscript": "Superscript"
+	"ep_subscript_and_superscript.subscript.title": "Subscript",
+	"ep_subscript_and_superscript.superscript.title": "Superscript"
 }

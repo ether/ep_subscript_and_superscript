@@ -4,6 +4,6 @@
 			"Kly"
 		]
 	},
-	"ep_subscript_and_superscript.subscript": "下標",
-	"ep_subscript_and_superscript.superscript": "上標"
+	"ep_subscript_and_superscript.subscript.title": "下標",
+	"ep_subscript_and_superscript.superscript.title": "上標"
 }

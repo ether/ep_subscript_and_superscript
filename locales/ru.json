@@ -4,6 +4,6 @@
 			"Okras"
 		]
 	},
-	"ep_subscript_and_superscript.subscript": "Подстрочный индекс",
-	"ep_subscript_and_superscript.superscript": "Надстрочный индекс"
+	"ep_subscript_and_superscript.subscript.title": "Подстрочный индекс",
+	"ep_subscript_and_superscript.superscript.title": "Надстрочный индекс"
 }

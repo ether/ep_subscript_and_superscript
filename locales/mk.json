@@ -4,6 +4,6 @@
 			"Bjankuloski06"
 		]
 	},
-	"ep_subscript_and_superscript.subscript": "Долен индекс",
-	"ep_subscript_and_superscript.superscript": "Горен индекс"
+	"ep_subscript_and_superscript.subscript.title": "Долен индекс",
+	"ep_subscript_and_superscript.superscript.title": "Горен индекс"
 }

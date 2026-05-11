@@ -4,6 +4,6 @@
 			"Jon Harald Søby"
 		]
 	},
-	"ep_subscript_and_superscript.subscript": "Senket skrift",
-	"ep_subscript_and_superscript.superscript": "Hevet skrift"
+	"ep_subscript_and_superscript.subscript.title": "Senket skrift",
+	"ep_subscript_and_superscript.superscript.title": "Hevet skrift"
 }

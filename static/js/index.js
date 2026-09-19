@@ -2,7 +2,10 @@
 
 // Bind the event handler to the toolbar buttons
 exports.postAceInit = (hook, context) => {
-  $('.subscript').click(() => {
+  $('.subscript').click((e) => {
+    // The file menu entry is an <a href="#"> link; without this the click
+    // would also jump the browser to the top of the page.
+    e.preventDefault();
     context.ace.callWithAce((ace) => {
       if (ace.ace_getAttributeOnSelection('sub')) {
         ace.ace_setAttributeOnSelection('sub', false);
@@ -11,7 +14,10 @@ exports.postAceInit = (hook, context) => {
       }
     }, 'insertsubscript', true);
   });
-  $('.superscript').click(() => {
+  $('.superscript').click((e) => {
+    // The file menu entry is an <a href="#"> link; without this the click
+    // would also jump the browser to the top of the page.
+    e.preventDefault();
     context.ace.callWithAce((ace) => {
       if (ace.ace_getAttributeOnSelection('sup')) {
         ace.ace_setAttributeOnSelection('sup', false);

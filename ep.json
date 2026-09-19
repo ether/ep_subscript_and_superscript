@@ -15,7 +15,7 @@
         "eejsBlock_editbarMenuLeft": "ep_subscript_and_superscript/index",
         "collectContentPre": "ep_subscript_and_superscript/static/js/shared",
         "collectContentPost": "ep_subscript_and_superscript/static/js/shared",
-        "eejsBlock_dd_format":"ep_subscript_and_superscript/index",
+        "eejsBlock_dd_format_text":"ep_subscript_and_superscript/index",
         "aceAttribClasses":"ep_subscript_and_superscript/index",
         "exportHtmlAdditionalTags" : "ep_subscript_and_superscript/index",
         "asyncLineHTMLForExport": "ep_subscript_and_superscript/index",

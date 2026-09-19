@@ -10,7 +10,7 @@ const eejs = require('ep_etherpad-lite/node/eejs/');
 exports.eejsBlock_editbarMenuLeft =
     template('ep_subscript_and_superscript/templates/editbarButtons.ejs');
 
-exports.eejsBlock_dd_format =
+exports.eejsBlock_dd_format_text =
     template('ep_subscript_and_superscript/templates/fileMenu.ejs');
 
 

@@ -9,7 +9,7 @@
   "deprecated": false,
   "description": "Add support for different Fonts",
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=22.0.0"
   },
   "homepage": "https://github.com/ether/ep_subscript_and_superscript#readme",
   "license": "Apache-2.0",
@@ -27,9 +27,9 @@
     "@types/mocha": "^10.0.10",
     "@types/node": "^26.5.0",
     "eslint": "^8.57.1",
-    "eslint-config-etherpad": "^4.0.5",
+    "eslint-config-etherpad": "^5.0.0",
     "mocha": "^12.0.0",
-    "typescript": "^7.0.2"
+    "typescript": "~6.0.3"
   },
   "scripts": {
     "lint": "eslint .",
